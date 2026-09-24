@@ -125,7 +125,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_05_write_notice" sap:VirtualizedContainerService.HintSize="719.6,3735.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_05_write_notice" sap:VirtualizedContainerService.HintSize="725.2,4731.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_가해학생" />
       <Variable x:TypeArguments="x:String" Name="str_output_path_1" />
@@ -182,7 +182,7 @@
               <OutArgument x:TypeArguments="x:String">[str_script]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">Scripts\replace_hwpx.py</InArgument>
+              <InArgument x:TypeArguments="x:String">Scripts\replace_hwpx_linesegarray.py</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -549,13 +549,13 @@ Distinct())]</InArgument>
         </If.Else>
       </If>
     </Sequence>
-    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope - hwp 텍스트 대치(학부모)" sap:VirtualizedContainerService.HintSize="512.8,1107.2" sap2010:WorkflowViewState.IdRef="PythonScope_1" LibraryPath="C:\Users\dhkim\AppData\Local\Programs\Python\Python312\python312.dll" Path="C:\Users\dhkim\AppData\Local\Programs\Python\Python312" Version="Python &gt;=3.10">
+    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope - hwp 텍스트 대치(학부모)" sap:VirtualizedContainerService.HintSize="512.8,2103.2" sap2010:WorkflowViewState.IdRef="PythonScope_1" LibraryPath="C:\Users\dhkim\AppData\Local\Programs\Python\Python312\python312.dll" Path="C:\Users\dhkim\AppData\Local\Programs\Python\Python312" Version="Python &gt;=3.10">
       <p:PythonScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="511.2,873.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="511.2,1869.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="p:PythonObject" Name="pyObj" />
               <Variable x:TypeArguments="p:PythonObject" Name="pyRes" />
@@ -594,7 +594,7 @@ Distinct())]</InArgument>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_피해]" DisplayName="For Each Row in Data Table - 피해" sap:VirtualizedContainerService.HintSize="477.6,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_피해]" DisplayName="For Each Row in Data Table - 피해" sap:VirtualizedContainerService.HintSize="477.6,1052.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -661,7 +661,7 @@ Distinct())]</InArgument>
               </ui:ForEachRow.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
