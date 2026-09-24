@@ -121,7 +121,7 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Process" sap:VirtualizedContainerService.HintSize="725.6,592" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Process" sap:VirtualizedContainerService.HintSize="731.2,592" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="str_filename_report" />
       <Variable x:TypeArguments="x:String" Name="str_filepath_report" />
@@ -428,14 +428,14 @@
                           <av:PointCollection x:Key="ConnectorLocation">330,605 330,650</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="사안조사 수집" sap:VirtualizedContainerService.HintSize="570.4,2632.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence DisplayName="사안조사 수집" sap:VirtualizedContainerService.HintSize="546.4,1747.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;사안조사보고서 수집 시작&quot;]" />
-                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="536.8,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;사안조사보고서 수집 시작&quot;]" />
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="512.8,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
@@ -449,12 +449,12 @@
                             </scg:List>
                           </ui:MultipleAssign.AssignOperations>
                         </ui:MultipleAssign>
-                        <ui:IfElseIf sap2010:Annotation.AnnotationText="[hwp → hwpx 확장자 변경법]&#xA;1. https://developer.hancom.com/hwpautomation 에서 보안승인모듈 다운로드&#xA;&#xA;2. 다운받은 FilePathCheckerModuleExample.dll 파일을 아래 위치에 저장&#xA;C:\Program Files (x86)\Hnc\Office 2024\HOffice130\Bin&#xA;&#xA;3. 레지스트리 HKEY_CURRENT_USER\SOFTWARE\HNC\HwpAutomation\Modules 위치에 문자열 값(String Value) 생성&#xA;- 이름: FilePathCheckerModuleExample&#xA;- 값(데이터): DLL의 전체 경로&#xA;&#xA;4. 실행 스크립트(C#) 내에 아래 코드 실행&#xA;hwp.RegisterModule(&quot;FilePathCheckDLL&quot;, &quot;FilePathCheckerModuleExample&quot;);" DisplayName="Else If - 확장자 통일(hwpx)" sap:VirtualizedContainerService.HintSize="536.8,1248.8" sap2010:WorkflowViewState.IdRef="IfElseIf_4">
+                        <ui:IfElseIf sap2010:Annotation.AnnotationText="[hwp → hwpx 확장자 변경법]&#xA;1. https://developer.hancom.com/hwpautomation 에서 보안승인모듈 다운로드&#xA;&#xA;2. 다운받은 FilePathCheckerModuleExample.dll 파일을 아래 위치에 저장&#xA;C:\Program Files (x86)\Hnc\Office 2024\HOffice130\Bin&#xA;&#xA;3. 레지스트리 HKEY_CURRENT_USER\SOFTWARE\HNC\HwpAutomation\Modules 위치에 문자열 값(String Value) 생성&#xA;- 이름: FilePathCheckerModuleExample&#xA;- 값(데이터): DLL의 전체 경로&#xA;&#xA;4. 실행 스크립트(C#) 내에 아래 코드 실행&#xA;hwp.RegisterModule(&quot;FilePathCheckDLL&quot;, &quot;FilePathCheckerModuleExample&quot;);" DisplayName="Else If - 확장자 통일(hwpx)" sap:VirtualizedContainerService.HintSize="512.8,363.2" sap2010:WorkflowViewState.IdRef="IfElseIf_4">
                           <ui:IfElseIf.ConditionBlocks>
                             <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                               <ui:IfElseIfBlock BlockType="If" Condition="[str_filename_report.Contains(&quot;hwpx&quot;)]">
                                 <ui:IfElseIfBlock.Then>
-                                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="486.4,89.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -466,14 +466,14 @@
                               </ui:IfElseIfBlock>
                               <ui:IfElseIfBlock BlockType="ElseIf" Condition="[str_filename_report.Contains(&quot;hwp&quot;)]">
                                 <ui:IfElseIfBlock.Then>
-                                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="486,197" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="486.4,196.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\98_convert_to_hwpx.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="416,137" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Jobs\98_convert_to_hwpx.xaml">
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\98_convert_to_hwpx.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="416,136.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Jobs\98_convert_to_hwpx.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_str_output_folder">[in_Config("output_folder").ToString]</InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_str_input_folder">[in_Config("input_folder").ToString]</InArgument>
@@ -493,7 +493,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[String.Format(&quot;파일 확장자: {0} - 처리 불가 파일&quot;, Path.GetExtension(str_filepath_info))]" />
-                                    <Throw Exception="[new BusinessRuleException(&quot;개인정보 - 처리 불가 확장자&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                                    <Throw Exception="[new BusinessRuleException(&quot;개인정보 - 처리 불가 확장자&quot;)]" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Throw_4" />
                                   </Sequence>
                                 </ui:IfElseIfBlock.Then>
                               </ui:IfElseIfBlock>
@@ -502,12 +502,12 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:IfElseIf>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="536.8,1000" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="512.8,1000" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <TryCatch.Try>
                             <Sequence DisplayName="시도" sap:VirtualizedContainerService.HintSize="511.2,577.6" sap2010:WorkflowViewState.IdRef="Sequence_37">
                               <sap:WorkflowViewStateService.ViewState>
@@ -529,9 +529,9 @@
                                   <InArgument x:TypeArguments="x:String" x:Key="in_str_filepath">
                                     <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_hwpx_report" />
                                   </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="out_str_가해추정일람표">
-                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_가해추정일람표" />
-                                  </InArgument>
+                                  <InOutArgument x:TypeArguments="x:String" x:Key="io_str_가해추정일람표">
+                                    <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_가해추정일람표" />
+                                  </InOutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                               <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope - 개인정보+사안정보 기록" sap:VirtualizedContainerService.HintSize="477.6,56.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2" ShowExcelWindow="False">

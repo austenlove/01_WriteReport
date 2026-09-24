@@ -4,7 +4,7 @@
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="io_dt_info" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_str_filepath" Type="InArgument(x:String)" />
-    <x:Property Name="out_str_가해추정일람표" Type="InArgument(x:String)" />
+    <x:Property Name="io_str_가해추정일람표" Type="InOutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -130,7 +130,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="_02_read_report" sap:VirtualizedContainerService.HintSize="719.6,2358.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_read_report" sap:VirtualizedContainerService.HintSize="784.4000000000001,2358.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_script" />
       <Variable x:TypeArguments="x:String" Name="str_extract" />
@@ -319,7 +319,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
               <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[out_str_가해추정일람표]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[io_str_가해추정일람표]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
                 <InArgument x:TypeArguments="x:String" xml:space="preserve">[str_extract.Split(
@@ -339,7 +339,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;가해추정: &quot; + out_str_가해추정일람표]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;가해추정: &quot; + io_str_가해추정일람표]" />
       <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_text - &quot;장애학생 여부&quot;와 &quot;사안개요&quot; 사이에 있는 텍스트&#xA;arr_text - 특수문자(&quot;∨&quot; 등) 및 빈행 제외한 순수 텍스트&#xA;int_cnt - arr_text 행넘버 카운팅에 사용" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,303.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
