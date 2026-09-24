@@ -191,7 +191,7 @@
               <OutArgument x:TypeArguments="x:String">[str_script]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">Scripts\replace_hwpx.py</InArgument>
+              <InArgument x:TypeArguments="x:String">Scripts\replace_hwpx_linesegarray.py</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">

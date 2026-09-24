@@ -129,7 +129,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_06_write_scenario" sap:VirtualizedContainerService.HintSize="958,6655" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_06_write_scenario" sap:VirtualizedContainerService.HintSize="725.2,6658.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_output_path" />
       <Variable x:TypeArguments="x:String" Name="str_script" />
@@ -157,7 +157,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="653,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="652.8,243.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -173,7 +173,7 @@
               <OutArgument x:TypeArguments="x:String">[str_script]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">Scripts\replace_hwpx.py</InArgument>
+              <InArgument x:TypeArguments="x:String">Scripts\replace_hwpx_linesegarray.py</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
@@ -194,7 +194,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope - 소위원회 정보 불러오기" sap:VirtualizedContainerService.HintSize="653,57" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope - 소위원회 정보 불러오기" sap:VirtualizedContainerService.HintSize="652.8,56.8" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
@@ -556,7 +556,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
-    <Sequence DisplayName="대체 데이터 생성 및 대체" sap:VirtualizedContainerService.HintSize="653,5059" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="대체 데이터 생성 및 대체" sap:VirtualizedContainerService.HintSize="652.8,5061.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_일시" />
         <Variable x:TypeArguments="s:DateTime" Name="datetime_일시" />
@@ -576,7 +576,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="619,304" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="619.2,304.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
@@ -648,7 +648,7 @@ Distinct())]</InArgument>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="619,211" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="619.2,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
@@ -681,7 +681,7 @@ Distinct())]</InArgument>
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <Sequence DisplayName="안건 문자열 생성 (학교별로 생성)" sap:VirtualizedContainerService.HintSize="619,582" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <Sequence DisplayName="안건 문자열 생성 (학교별로 생성)" sap:VirtualizedContainerService.HintSize="619.2,582.4" sap2010:WorkflowViewState.IdRef="Sequence_16">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="li_안건" />
         </Sequence.Variables>
@@ -691,7 +691,7 @@ Distinct())]</InArgument>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_52">
@@ -705,7 +705,7 @@ Distinct())]</InArgument>
             </scg:List>
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
-        <Assign sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_9">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[str_안건]</OutArgument>
           </Assign.To>
