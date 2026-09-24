@@ -136,7 +136,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="_04_write_committee_plan" sap:VirtualizedContainerService.HintSize="784.4000000000001,2197.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_04_write_committee_plan" sap:VirtualizedContainerService.HintSize="812.4000000000001,2228" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_script" />
       <Variable x:TypeArguments="x:String" Name="str_output_path" />
@@ -166,6 +166,7 @@
       <Variable x:TypeArguments="s:DateTime" Name="datetime_일시" />
       <Variable x:TypeArguments="x:String" Name="str_사전회의" />
       <Variable x:TypeArguments="s:DateTime" Name="datetime_사전회의" />
+      <Variable x:TypeArguments="x:String" Name="str_학생명" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -210,7 +211,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_사전회의 비어있으면 일시에서 -20 min (default)" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,430.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_사전회의 비어있으면 일시에서 -20 min (default)" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,460.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_48">
@@ -251,6 +252,17 @@
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="sd:DataTable">[new DataTable]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_59">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_학생명]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Join(", ", in_dt_info.AsEnumerable().
+Select(Function(row) row("학생 성명").ToString.Trim).
+Where(Function(x) Not String.IsNullOrWhiteSpace(x)).
+Distinct())]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_53">
@@ -673,6 +685,7 @@ Distinct())]</InArgument>
         {"{{차수}}", in_TransactionItem.SpecificContent("CASE_NUM").ToString},
 		{"{{일시}}", datetime_일시.ToString("yyyy. M. d.(ddd) HH:mm", New System.Globalization.CultureInfo("ko-KR"))},
 		{"{{사전회의}}", datetime_사전회의.ToString("HH:mm")},
+		{"{{학생명}}", str_학생명},
         {"{{학교명}}", str_학교명},
         {"{{접수번호}}", str_접수번호},
         {"{{사안유형}}", str_사안유형},
