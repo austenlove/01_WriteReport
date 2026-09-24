@@ -1,0 +1,14 @@
+﻿{
+  "Name": "도로명주소",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "kfR9rGpEg0-xrifs89EzFA",
+  "Reference": "XamELRwiEEucPptpw6nbbg/kfR9rGpEg0-xrifs89EzFA",
+  "ParentRef": "XamELRwiEEucPptpw6nbbg/pV--ooj_G0qy18LbwcMGGg",
+  "Created": "2026-09-15T09:42:34.6914109Z",
+  "Updated": "2026-09-15T09:42:34.6914109Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.7.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

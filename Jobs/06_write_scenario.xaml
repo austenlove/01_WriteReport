@@ -1,0 +1,1308 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_06_write_scenario" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_dt_info" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>_06_write_scenario_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>Microsoft.Office.Interop.Word</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Python</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Python.Activities</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>Microsoft.Office.Interop.Word</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_06_write_scenario" sap:VirtualizedContainerService.HintSize="958,6655" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_output_path" />
+      <Variable x:TypeArguments="x:String" Name="str_script" />
+      <Variable x:TypeArguments="x:String" Name="str_temp" />
+      <Variable x:TypeArguments="x:String" Name="str_소위원회_path" />
+      <Variable x:TypeArguments="x:String" Name="str_영역1" />
+      <Variable x:TypeArguments="x:String" Name="str_위원1" />
+      <Variable x:TypeArguments="x:String" Name="str_영역2" />
+      <Variable x:TypeArguments="x:String" Name="str_위원2" />
+      <Variable x:TypeArguments="x:String" Name="str_영역3" />
+      <Variable x:TypeArguments="x:String" Name="str_위원3" />
+      <Variable x:TypeArguments="x:String" Name="str_영역4" />
+      <Variable x:TypeArguments="x:String" Name="str_위원4" />
+      <Variable x:TypeArguments="x:String" Name="str_영역5" />
+      <Variable x:TypeArguments="x:String" Name="str_위원5" />
+      <Variable x:TypeArguments="x:String" Name="str_영역6" />
+      <Variable x:TypeArguments="x:String" Name="str_영역7" />
+      <Variable x:TypeArguments="x:String" Name="str_위원7" />
+      <Variable x:TypeArguments="x:String" Name="str_위원6" />
+      <Variable x:TypeArguments="x:String" Name="json_input" />
+      <Variable x:TypeArguments="x:String" Name="str_안건" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="653,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_output_path]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("output_folder").ToString, in_TransactionItem.SpecificContent.Item("DIR_NAME").ToString, String.Format("제{0}차 학교폭력대책심의위원회 시나리오.hwpx", in_TransactionItem.SpecificContent.Item("CASE_NUM").ToString))]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_script]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">Scripts\replace_hwpx.py</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_소위원회_path]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">Data\소위원회.xlsx</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope - 소위원회 정보 불러오기" sap:VirtualizedContainerService.HintSize="653,57" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
+      <ueab:ExcelProcessScopeX.Body>
+        <ActivityAction x:TypeArguments="ui:IExcelProcess">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="548,1985" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="arr_소위원회" />
+              <Variable x:TypeArguments="x:String" Name="str_소위원회" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="514,1925" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[str_소위원회_path]">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="512,1705" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_소위원회" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,552" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역1]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원1]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역2]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원2]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역3]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원3]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역4]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원4]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역5]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원5]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역6]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원6]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역7]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원7]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:MultipleAssign>
+                    <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="478.4,168.8" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;소위원회&quot;)]" SaveTo="[dt_소위원회]" />
+                    <ui:FilterDataTable DataTable="[dt_소위원회]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_소위원회]" SelectColumnsMode="Remove">
+                      <ui:FilterDataTable.Filters>
+                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                            <ui:FilterOperationArgument.Column>
+                              <InArgument x:TypeArguments="x:String">["소위"]</InArgument>
+                            </ui:FilterOperationArgument.Column>
+                            <ui:FilterOperationArgument.Operand>
+                              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("COMMITTEE_NO").ToString]</InArgument>
+                            </ui:FilterOperationArgument.Operand>
+                          </ui:FilterOperationArgument>
+                        </scg:List>
+                      </ui:FilterDataTable.Filters>
+                      <ui:FilterDataTable.SelectColumns>
+                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                          <x:Null />
+                        </scg:List>
+                      </ui:FilterDataTable.SelectColumns>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:FilterDataTable>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[String.Format(&quot;소위원회: {0}명&quot;, dt_소위원회.RowCount.ToString)]" />
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="s:String[]">[arr_소위원회]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="s:String[]">[dt_소위원회.AsEnumerable().Select(Function(r) String.Join(",", r.ItemArray.Select(Function(x) x.ToString))).ToArray()]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,543" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역1]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(0).Split(",")(1)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원1]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(0).Split(",")(2)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역2]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(1).Split(",")(1)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원2]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(1).Split(",")(2)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역3]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(2).Split(",")(1)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원3]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(2).Split(",")(2)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역4]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(3).Split(",")(1)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_26">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원4]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(3).Split(",")(2)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_27">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역5]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(4).Split(",")(1)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_28">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원5]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(4).Split(",")(2)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역6]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(5).Split(",")(1)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원6]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(5).Split(",")(2)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_영역7]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(6).Split(",")(1)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[str_위원7]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[arr_소위원회(6).Split(",")(2)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:MultipleAssign>
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelProcessScopeX.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ueab:ExcelProcessScopeX>
+    <Sequence DisplayName="대체 데이터 생성 및 대체" sap:VirtualizedContainerService.HintSize="653,5059" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_일시" />
+        <Variable x:TypeArguments="s:DateTime" Name="datetime_일시" />
+        <Variable x:TypeArguments="x:String" Name="str_학교명" />
+        <Variable x:TypeArguments="x:String" Name="str_접수번호" />
+        <Variable x:TypeArguments="x:String" Name="str_사안유형" />
+        <Variable x:TypeArguments="x:String" Name="str_피해대가해" />
+        <Variable x:TypeArguments="x:String" Name="str_피해접수번호" />
+        <Variable x:TypeArguments="x:String" Name="str_가해접수번호" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_피해" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_가해" />
+        <Variable x:TypeArguments="x:String" Name="str_접수일자" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="619,304" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[str_일시]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("DATE").ToString]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:DateTime">[datetime_일시]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:DateTime">[Datetime.ParseExact(str_일시, "yyyy.MM.dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_39">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[str_학교명]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Join(", ", in_dt_info.AsEnumerable().
+Select(Function(row) row("학교명").ToString.Trim).
+Where(Function(x) Not String.IsNullOrWhiteSpace(x)).
+Distinct()).Replace("초등학교","초").Replace("중학교","중").Replace("고등학교","고")]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[str_접수번호]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Join(", ", in_dt_info.AsEnumerable().
+Select(Function(row) row("접수번호").ToString.Trim).
+Where(Function(x) Not String.IsNullOrWhiteSpace(x)).
+Distinct())]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_53">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[str_접수일자]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Join(", ", in_dt_info.AsEnumerable().
+Select(Function(row) row("접수일자").ToString.Trim).
+Where(Function(x) Not String.IsNullOrWhiteSpace(x)).
+Distinct())]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[str_사안유형]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Join(", ", in_dt_info.AsEnumerable().
+Select(Function(row) row("사안유형").ToString.Trim).
+Where(Function(x) Not String.IsNullOrWhiteSpace(x)).
+Distinct())]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="619,211" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dt_피해]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[in_dt_info.Select("[피가해] LIKE '%피해%' OR [피가해] LIKE '%피가해%'").CopyToDataTable()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_44">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dt_가해]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[in_dt_info.Select("[피가해] LIKE '%가해%' OR [피가해] LIKE '%피가해%'").CopyToDataTable()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_54">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[str_피해대가해]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Join(", ", in_dt_info.AsEnumerable().
+Select(Function(row) row("피해대가해").ToString.Trim).
+Where(Function(x) Not String.IsNullOrWhiteSpace(x)).
+Distinct())]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <Sequence DisplayName="안건 문자열 생성 (학교별로 생성)" sap:VirtualizedContainerService.HintSize="619,582" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="scg:List(x:String)" Name="li_안건" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
+          <ui:MultipleAssign.AssignOperations>
+            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_52">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="scg:List(x:String)">[li_안건]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="scg:List(x:String)">[in_dt_info.AsEnumerable().GroupBy(Function(r) r("학교명").ToString.Trim).Select(Function(g) g.Key &amp; " " &amp; String.Join(", ", g.Select(Function(r) r("학생 성명").ToString.Trim))).ToList()]</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
+            </scg:List>
+          </ui:MultipleAssign.AssignOperations>
+        </ui:MultipleAssign>
+        <Assign sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="Assign_9">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_안건]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[String.Join(", ", li_안건)]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[str_안건]" />
+      </Sequence>
+      <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="619,3870" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+        <ui:IfElseIf.ConditionBlocks>
+          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+            <ui:IfElseIfBlock BlockType="If" Condition="[str_피해대가해.Equals(&quot;1대1&quot;) And Not str_피해대가해.Contains(&quot;피가해&quot;)]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="본문 - 1대1" sap:VirtualizedContainerService.HintSize="568,375" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_45">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_temp]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">C:\Data\Temp\시나리오\1대1.hwpx</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <Assign DisplayName="Assign ★ 시나리오 대체 데이터 생성" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[Newtonsoft.Json.JsonConvert.SerializeObject(
+    New Dictionary(Of String, Object) From {
+        {"{{차수}}", in_TransactionItem.SpecificContent("CASE_NUM").ToString},
+		{"{{년도}}", datetime_일시.ToString("yyyy", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{날짜}}", datetime_일시.ToString("yyyy. M. d.(ddd)", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{시간}}", datetime_일시.ToString("H:mm", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{안건}}", str_안건},
+		{"{{접수번호}}", String.Join(", ", in_dt_info.AsEnumerable().Select(Function(row) row("접수번호").ToString.Trim).Where(Function(x) Not String.IsNullOrWhiteSpace(x)).Distinct()).Replace(" ", "-")},
+		{"{{접수일자}}", str_접수일자},
+		{"{{피해}}", String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{피해학교명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{피해학년반}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{피해학생}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해추정일람표}}", ""},
+		{"{{위원1}}", str_위원1},
+		{"{{위원2}}", str_위원2},
+		{"{{위원3}}", str_위원3},
+		{"{{위원4}}", str_위원4},
+		{"{{위원5}}", str_위원5},
+		{"{{위원6}}", str_위원6},
+		{"{{위원7}}", str_위원7},
+		{"{{작성일}}", Today.ToString("yyyy. M. d.")}
+    }
+)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+            <ui:IfElseIfBlock BlockType="ElseIf" Condition="[str_피해대가해.Contains(&quot;1대1&quot;) And str_피해대가해.Contains(&quot;피가해&quot;)]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="본문 - 1대1(쌍방)" sap:VirtualizedContainerService.HintSize="568,375" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_46">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_temp]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">C:\Data\Temp\시나리오\1대1.hwpx</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <Assign DisplayName="Assign ★ 개최계획서 대체 데이터 생성" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[Newtonsoft.Json.JsonConvert.SerializeObject(
+    New Dictionary(Of String, Object) From {
+        {"{{차수}}", in_TransactionItem.SpecificContent("CASE_NUM").ToString},
+		{"{{년도}}", datetime_일시.ToString("yyyy", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{날짜}}", datetime_일시.ToString("yyyy. M. d.(ddd)", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{시간}}", datetime_일시.ToString("H:mm", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{안건}}", str_안건},
+		{"{{접수번호}}", String.Join(", ", in_dt_info.AsEnumerable().Select(Function(row) row("접수번호").ToString.Trim).Where(Function(x) Not String.IsNullOrWhiteSpace(x)).Distinct()).Replace(" ", "-")},
+		{"{{접수일자}}", str_접수일자},
+		{"{{피해}}", String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{피해학교명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{피해학년반}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{피해학생}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해추정일람표}}", ""},
+		{"{{위원1}}", str_위원1},
+		{"{{위원2}}", str_위원2},
+		{"{{위원3}}", str_위원3},
+		{"{{위원4}}", str_위원4},
+		{"{{위원5}}", str_위원5},
+		{"{{위원6}}", str_위원6},
+		{"{{위원7}}", str_위원7},
+		{"{{작성일}}", Today.ToString("yyyy. M. d.")}
+    }
+)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+            <ui:IfElseIfBlock BlockType="ElseIf" Condition="[str_피해대가해.Equals(&quot;1대2&quot;) And Not str_피해대가해.Contains(&quot;피가해&quot;)]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_3">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="본문 - 1대2" sap:VirtualizedContainerService.HintSize="568,375" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_47">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_temp]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">C:\Data\Temp\시나리오\1대2.hwpx</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <Assign DisplayName="Assign ★ 개최계획서 대체 데이터 생성" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[Newtonsoft.Json.JsonConvert.SerializeObject(
+    New Dictionary(Of String, Object) From {
+        {"{{차수}}", in_TransactionItem.SpecificContent("CASE_NUM").ToString},
+		{"{{년도}}", datetime_일시.ToString("yyyy", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{날짜}}", datetime_일시.ToString("yyyy. M. d.(ddd)", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{시간}}", datetime_일시.ToString("H:mm", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{안건}}", str_안건},
+		{"{{접수번호}}", String.Join(", ", in_dt_info.AsEnumerable().Select(Function(row) row("접수번호").ToString.Trim).Where(Function(x) Not String.IsNullOrWhiteSpace(x)).Distinct()).Replace(" ", "-")},
+		{"{{접수일자}}", str_접수일자},
+		{"{{피해}}", String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{피해학교명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{피해학년반}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{피해학생명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해1}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명1}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반1}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생명1}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해2}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명2}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반2}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생명2}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해추정일람표1}}", ""},
+		{"{{가해추정일람표2}}", ""},
+		{"{{가해추정일람표1+2}}", ""},
+		{"{{위원1}}", str_위원1},
+		{"{{위원2}}", str_위원2},
+		{"{{위원3}}", str_위원3},
+		{"{{위원4}}", str_위원4},
+		{"{{위원5}}", str_위원5},
+		{"{{위원6}}", str_위원6},
+		{"{{위원7}}", str_위원7},
+		{"{{작성일}}", Today.ToString("yyyy. M. d.")}
+    }
+)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+            <ui:IfElseIfBlock BlockType="ElseIf" Condition="[str_피해대가해.Contains(&quot;1대2&quot;) And str_피해대가해.Contains(&quot;피가해&quot;)]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_4">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="568,375" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_55">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_temp]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">C:\Data\Temp\시나리오\1대2.hwpx</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <Assign DisplayName="Assign ★ 개최계획서 대체 데이터 생성" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[Newtonsoft.Json.JsonConvert.SerializeObject(
+    New Dictionary(Of String, Object) From {
+        {"{{차수}}", in_TransactionItem.SpecificContent("CASE_NUM").ToString},
+		{"{{년도}}", datetime_일시.ToString("yyyy", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{날짜}}", datetime_일시.ToString("yyyy. M. d.(ddd)", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{시간}}", datetime_일시.ToString("H:mm", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{안건}}", str_안건},
+		{"{{접수번호}}", String.Join(", ", in_dt_info.AsEnumerable().Select(Function(row) row("접수번호").ToString.Trim).Where(Function(x) Not String.IsNullOrWhiteSpace(x)).Distinct()).Replace(" ", "-")},
+		{"{{접수일자}}", str_접수일자},
+		{"{{피해}}", String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{피해학교명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{피해학년반}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{피해학생명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해1}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명1}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반1}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생명1}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해2}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명2}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반2}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생명2}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해추정일람표1}}", ""},
+		{"{{가해추정일람표2}}", ""},
+		{"{{가해추정일람표1+2}}", ""},
+		{"{{위원1}}", str_위원1},
+		{"{{위원2}}", str_위원2},
+		{"{{위원3}}", str_위원3},
+		{"{{위원4}}", str_위원4},
+		{"{{위원5}}", str_위원5},
+		{"{{위원6}}", str_위원6},
+		{"{{위원7}}", str_위원7},
+		{"{{작성일}}", Today.ToString("yyyy. M. d.")}
+    }
+)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+            <ui:IfElseIfBlock BlockType="ElseIf" Condition="[str_피해대가해.Equals(&quot;1대3&quot;) And Not str_피해대가해.Contains(&quot;피가해&quot;)]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_5">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="568,375" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_48">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_temp]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">C:\Data\Temp\시나리오\1대3.hwpx</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <Assign DisplayName="Assign ★ 개최계획서 대체 데이터 생성" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[Newtonsoft.Json.JsonConvert.SerializeObject(
+    New Dictionary(Of String, Object) From {
+        {"{{차수}}", in_TransactionItem.SpecificContent("CASE_NUM").ToString},
+		{"{{년도}}", datetime_일시.ToString("yyyy", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{날짜}}", datetime_일시.ToString("yyyy. M. d.(ddd)", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{시간}}", datetime_일시.ToString("H:mm", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{안건}}", str_안건},
+		{"{{접수번호}}", String.Join(", ", in_dt_info.AsEnumerable().Select(Function(row) row("접수번호").ToString.Trim).Where(Function(x) Not String.IsNullOrWhiteSpace(x)).Distinct()).Replace(" ", "-")},
+		{"{{접수일자}}", str_접수일자},
+		{"{{피해}}", String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{피해학교명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{피해학년반}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{피해학생}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해추정일람표}}", ""},
+		{"{{위원1}}", str_위원1},
+		{"{{위원2}}", str_위원2},
+		{"{{위원3}}", str_위원3},
+		{"{{위원4}}", str_위원4},
+		{"{{위원5}}", str_위원5},
+		{"{{위원6}}", str_위원6},
+		{"{{위원7}}", str_위원7},
+		{"{{작성일}}", Today.ToString("yyyy. M. d.")}
+    }
+)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+            <ui:IfElseIfBlock BlockType="ElseIf" Condition="[str_피해대가해.Equals(&quot;3대1&quot;) And str_피해대가해.Contains(&quot;피가해&quot;)]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_6">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="568,226" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign ★ 개최계획서 대체 데이터 생성" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[Newtonsoft.Json.JsonConvert.SerializeObject(
+    New Dictionary(Of String, Object) From {
+        {"{{차수}}", in_TransactionItem.SpecificContent("CASE_NUM").ToString},
+		{"{{년도}}", datetime_일시.ToString("yyyy", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{날짜}}", datetime_일시.ToString("yyyy. M. d.(ddd)", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{시간}}", datetime_일시.ToString("H:mm", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{안건}}", str_안건},
+		{"{{접수번호}}", String.Join(", ", in_dt_info.AsEnumerable().Select(Function(row) row("접수번호").ToString.Trim).Where(Function(x) Not String.IsNullOrWhiteSpace(x)).Distinct()).Replace(" ", "-")},
+		{"{{접수일자}}", str_접수일자},
+		{"{{피해}}", String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{피해학교명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{피해학년반}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{피해학생}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해추정일람표}}", ""},
+		{"{{위원1}}", str_위원1},
+		{"{{위원2}}", str_위원2},
+		{"{{위원3}}", str_위원3},
+		{"{{위원4}}", str_위원4},
+		{"{{위원5}}", str_위원5},
+		{"{{위원6}}", str_위원6},
+		{"{{위원7}}", str_위원7},
+		{"{{작성일}}", Today.ToString("yyyy. M. d.")}
+    }
+)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+            <ui:IfElseIfBlock BlockType="ElseIf" Condition="[str_피해대가해.Equals(&quot;3대2&quot;)]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="568,375" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_50">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_temp]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">C:\Data\Temp\시나리오\3대2.hwpx</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <Assign DisplayName="Assign ★ 개최계획서 대체 데이터 생성" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[Newtonsoft.Json.JsonConvert.SerializeObject(
+    New Dictionary(Of String, Object) From {
+        {"{{차수}}", in_TransactionItem.SpecificContent("CASE_NUM").ToString},
+		{"{{년도}}", datetime_일시.ToString("yyyy", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{날짜}}", datetime_일시.ToString("yyyy. M. d.(ddd)", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{시간}}", datetime_일시.ToString("H:mm", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{안건}}", str_안건},
+		{"{{접수번호}}", String.Join(", ", in_dt_info.AsEnumerable().Select(Function(row) row("접수번호").ToString.Trim).Where(Function(x) Not String.IsNullOrWhiteSpace(x)).Distinct()).Replace(" ", "-")},
+		{"{{접수일자}}", str_접수일자},
+		{"{{피해}}", String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{피해학교명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{피해학년반}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{피해학생}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해추정일람표}}", ""},
+		{"{{위원1}}", str_위원1},
+		{"{{위원2}}", str_위원2},
+		{"{{위원3}}", str_위원3},
+		{"{{위원4}}", str_위원4},
+		{"{{위원5}}", str_위원5},
+		{"{{위원6}}", str_위원6},
+		{"{{위원7}}", str_위원7},
+		{"{{작성일}}", Today.ToString("yyyy. M. d.")}
+    }
+)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+            <ui:IfElseIfBlock BlockType="Else">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="568,375" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_18">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_56">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[str_temp]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">C:\Data\Temp\시나리오\3대2.hwpx</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <Assign DisplayName="Assign ★ 개최계획서 대체 데이터 생성" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[Newtonsoft.Json.JsonConvert.SerializeObject(
+    New Dictionary(Of String, Object) From {
+        {"{{차수}}", in_TransactionItem.SpecificContent("CASE_NUM").ToString},
+		{"{{년도}}", datetime_일시.ToString("yyyy", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{날짜}}", datetime_일시.ToString("yyyy. M. d.(ddd)", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{시간}}", datetime_일시.ToString("H:mm", New System.Globalization.CultureInfo("ko-KR"))},
+		{"{{안건}}", str_안건},
+		{"{{접수번호}}", String.Join(", ", in_dt_info.AsEnumerable().Select(Function(row) row("접수번호").ToString.Trim).Where(Function(x) Not String.IsNullOrWhiteSpace(x)).Distinct()).Replace(" ", "-")},
+		{"{{접수일자}}", str_접수일자},
+		{"{{피해}}", String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{피해학교명}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{피해학년반}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{피해학생}}", String.Join(", ", dt_피해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해}}", String.Join(" ", dt_가해.AsEnumerable().Select(Function(r) r("학교명").ToString())) + " " + String.Join(" ", dt_피해.AsEnumerable().Select(Function(r) r("학생 성명").ToString()))},
+		{"{{가해학교명}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학교명").ToString).ToArray)},
+		{"{{가해학년반}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학년반").ToString).ToArray)},
+		{"{{가해학생}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
+		{"{{가해추정일람표}}", ""},
+		{"{{위원1}}", str_위원1},
+		{"{{위원2}}", str_위원2},
+		{"{{위원3}}", str_위원3},
+		{"{{위원4}}", str_위원4},
+		{"{{위원5}}", str_위원5},
+		{"{{위원6}}", str_위원6},
+		{"{{위원7}}", str_위원7},
+		{"{{작성일}}", Today.ToString("yyyy. M. d.")}
+    }
+)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+          </sc:BindingList>
+        </ui:IfElseIf.ConditionBlocks>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:IfElseIf>
+    </Sequence>
+    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope - hwp 텍스트 대치" sap:VirtualizedContainerService.HintSize="653,1274" sap2010:WorkflowViewState.IdRef="PythonScope_1" LibraryPath="C:\Users\dhkim\AppData\Local\Programs\Python\Python312\python312.dll" Path="C:\Users\dhkim\AppData\Local\Programs\Python\Python312" Version="Python &gt;=3.10">
+      <p:PythonScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="450,1049" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="p:PythonObject" Name="pyObj" />
+              <Variable x:TypeArguments="p:PythonObject" Name="pyRes" />
+              <Variable x:TypeArguments="x:Boolean" Name="is_exists" />
+              <Variable x:TypeArguments="njl:JObject" Name="jsonObj" />
+              <Variable x:TypeArguments="x:String" Name="str_school" />
+              <Variable x:TypeArguments="x:String" Name="str_result" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[String.Format(&quot;{0} 텍스트 대치 시작&quot;, str_output_path)]" />
+            <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="LoadScript_1" Result="[pyObj]" ScriptFile="[str_script]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:LoadScript>
+            <p:InvokeMethod DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" Instance="[pyObj]" Name="replace_hwpx" Parameters="[new Object() {str_temp, str_output_path, json_input}]" Result="[pyRes]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:InvokeMethod>
+            <p:GetObject x:TypeArguments="x:String" DisplayName="Get Python Object" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="GetObject`1_1" PythonObject="[pyRes]" Result="[str_result]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[str_result]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(&quot;{0} 텍스트 추출 종료&quot;, str_output_path)]" />
+          </Sequence>
+        </ActivityAction>
+      </p:PythonScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p:PythonScope>
+  </Sequence>
+</Activity>

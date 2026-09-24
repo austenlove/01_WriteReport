@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome 주소정보누리집(도로명주소 안내시스템)  메인",
+  "Type": "App",
+  "Id": "lkAqpFlS_02DoLWaSV8CUQ",
+  "Reference": "XamELRwiEEucPptpw6nbbg/lkAqpFlS_02DoLWaSV8CUQ",
+  "Created": "2026-09-15T09:39:06.3464894Z",
+  "Updated": "2026-09-15T09:39:06.3464894Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.7.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

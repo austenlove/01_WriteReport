@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="AKLcgQc8VkqwDN_jSpApNQ" Reference="XamELRwiEEucPptpw6nbbg/kfR9rGpEg0-xrifs89EzFA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="juso.go.kr" DesignTimeRectangle="1256, 885, 75, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='resultLayerPopup__functionPostalCodeNumber' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl class='resultLayerPopup__functionPostalCodeNumber' tag='STRONG' type='' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5904f829-18fa-4190-875f-3263f05a09cd" ScopeSelectorArgument="&lt;html app='chrome.exe' title='주소정보누리집(도로명주소 안내시스템) &amp;lt; 메인' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="1267, 857, 54, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='resultLayerPopup__functionPostalCodeText' tag='STRONG' type='' aaname=' 우편번호 ' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='우편번호' /&gt;" Guid="1e5033cc-a8b0-42ce-965b-30174ae36844" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="100537ba5f0377de3460c5da474b43b3.jpg" xmlns="">0XMR1-r-hLUCD7VYesq4IRQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

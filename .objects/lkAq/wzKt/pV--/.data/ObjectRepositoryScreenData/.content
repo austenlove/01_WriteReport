@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="RdIEQiMtrECJ8n7XC0jwAw" Reference="XamELRwiEEucPptpw6nbbg/pV--ooj_G0qy18LbwcMGGg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-9, -9, 1938, 1038" BrowserType="Chrome" ContentHash="Cx1V_jiiRkOWS8H6zy_5bA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAaCAYAAABPY4eKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAD/SURBVEhL7dHNCcIwHAXwjuAG9mDVmyPoCG6gGKveHKFHQUyCJxsvHUHBATpCRyhNxWsqDqBEpda/0ih+IJgH7xJCfo/WMJ6I8MzCbl6qb5lFE2YF4+lS2JgvEImHfbyuwfsv5QpzLT9h5X22o+lq3yU8LSJReBoTtZ4ec8FKzhkTEMzDYbNj0GRThJ5xxNzK8BEMVoXDyjEIcy8dAx9UVCTzii/Hilm1MaChiShv2pR7XRoHEMstjR0VfsJY2ZGY/C3wy2Ujx/TIuiXH2ISHN6ASP2IWfQRTJXfMHTyED7wrHczbGv8NPHuACNf426NxjWtc4+mAD1Uo8a/1r/EDip9AL/JZDgYAAAAASUVORK5CYII=" Reference="XamELRwiEEucPptpw6nbbg/pV--ooj_G0qy18LbwcMGGg" Selector="&lt;html app='chrome.exe' title='주소정보누리집(도로명주소 안내시스템) &amp;lt; 메인' /&gt;" Url="https://www.juso.go.kr/" Version="V3">
+      <TargetApp.Arguments>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Arguments>
+      <TargetApp.WorkingDirectory>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.WorkingDirectory>
+      <imageRef attrName="InformativeScreenshot" originalValue="da1c443886a85e90212a6dc9d3c992c4.jpg" xmlns="">0UM7XSkBb-kOU7bgxS6HzSw</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>
