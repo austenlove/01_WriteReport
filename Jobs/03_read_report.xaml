@@ -313,7 +313,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
         </Assign.Value>
       </Assign>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="622.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;조사관명: &quot; + str_inspector]" />
-      <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_text - &quot;장애학생 여부&quot;와 &quot;사안개요&quot; 사이에 있는 텍스트&#xA;arr_text - &quot;∨&quot; 및 빈행 제외한 순수 텍스트&#xA;int_cnt - arr_text 행넘버 카운팅에 사용" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="622.4,303.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_text - &quot;장애학생 여부&quot;와 &quot;사안개요&quot; 사이에 있는 텍스트&#xA;arr_text - 특수문자(&quot;∨&quot; 등) 및 빈행 제외한 순수 텍스트&#xA;int_cnt - arr_text 행넘버 카운팅에 사용" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="622.4,303.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
