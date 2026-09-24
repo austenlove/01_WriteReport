@@ -4,6 +4,7 @@
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="io_dt_info" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_str_filepath" Type="InArgument(x:String)" />
+    <x:Property Name="out_str_가해추정일람표" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -129,7 +130,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="_02_read_report" sap:VirtualizedContainerService.HintSize="812.4000000000001,2720.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_read_report" sap:VirtualizedContainerService.HintSize="719.6,2358.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_script" />
       <Variable x:TypeArguments="x:String" Name="str_extract" />
@@ -142,8 +143,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;사안조사 보고서 추출 시작&quot;]" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="545.6,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;사안조사 보고서 추출 시작&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="512,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -187,7 +188,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope - 텍스트 추출" sap:VirtualizedContainerService.HintSize="545.6,56.8" sap2010:WorkflowViewState.IdRef="PythonScope_1" LibraryPath="C:\Users\dhkim\AppData\Local\Programs\Python\Python312\python312.dll" Path="C:\Users\dhkim\AppData\Local\Programs\Python\Python312" Version="Python &gt;=3.10">
+    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope - 텍스트 추출" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="PythonScope_1" LibraryPath="C:\Users\dhkim\AppData\Local\Programs\Python\Python312\python312.dll" Path="C:\Users\dhkim\AppData\Local\Programs\Python\Python312" Version="Python &gt;=3.10">
       <p:PythonScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -228,7 +229,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </p:PythonScope>
-    <Sequence DisplayName="데이터 가공 - str_extract" sap:VirtualizedContainerService.HintSize="545.6,2058.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="데이터 가공 - str_extract" sap:VirtualizedContainerService.HintSize="512,1696" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Name="arr_text" />
         <Variable x:TypeArguments="x:Int32" Name="idx" />
@@ -244,7 +245,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="접수번호 추출" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence DisplayName="접수번호 추출" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -267,7 +268,7 @@
         </ui:MultipleAssign>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;접수번호: &quot; + String.Join(&quot;,&quot;, io_arr_registration)]" />
       </Sequence>
-      <Sequence DisplayName="접수일자 추출" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence DisplayName="접수일자 추출" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -295,7 +296,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
         </ui:MultipleAssign>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;접수일자: &quot; + datetime_접수일자.ToString(&quot;yyyy-MM-dd&#x9;&quot;)]" />
       </Sequence>
-      <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_category]</OutArgument>
         </Assign.To>
@@ -303,8 +304,8 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
           <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(str_extract, "사안유형\s*\r?\n\s*([^\r\n]+)").Groups(1).Value.Trim.Replace(" ", "").Replace("유형:", "")]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;사안유형: &quot; + str_category]" />
-      <Assign sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;사안유형: &quot; + str_category]" />
+      <Assign sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_7">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_inspector]</OutArgument>
         </Assign.To>
@@ -312,11 +313,37 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
           <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(str_extract, "(?&lt;=담당 조사관명\s*)[\r\n\s]+([^\r\n]+)").Groups(1).Value.Trim.Replace(" ", "").Replace("(인)","")]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;조사관명: &quot; + str_inspector]" />
-      <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_text - &quot;장애학생 여부&quot;와 &quot;사안개요&quot; 사이에 있는 텍스트&#xA;arr_text - 특수문자(&quot;∨&quot; 등) 및 빈행 제외한 순수 텍스트&#xA;int_cnt - arr_text 행넘버 카운팅에 사용" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="512,303.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;조사관명: &quot; + str_inspector]" />
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_text - &quot;장애학생 여부&quot;와 &quot;사안개요&quot; 사이에 있는 텍스트&#xA;arr_text - 특수문자(&quot;∨&quot; 등) 및 빈행 제외한 순수 텍스트&#xA;int_cnt - arr_text 행넘버 카운팅에 사용" DisplayName="Multiple Assign - 가해추정일람표" sap:VirtualizedContainerService.HintSize="478.4,210.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[out_str_가해추정일람표]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[str_extract.Split(
+    New String() {"조사 요약 내용"},
+    StringSplitOptions.None
+)(1).Split(
+    New String() {"사안 경위"},
+    StringSplitOptions.None
+)(0)]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;가해추정: &quot; + out_str_가해추정일람표]" />
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_text - &quot;장애학생 여부&quot;와 &quot;사안개요&quot; 사이에 있는 텍스트&#xA;arr_text - 특수문자(&quot;∨&quot; 등) 및 빈행 제외한 순수 텍스트&#xA;int_cnt - arr_text 행넘버 카운팅에 사용" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,303.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:String">[str_text]</OutArgument>
               </ui:AssignOperation.To>
@@ -330,7 +357,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
 )(0)]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_39">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="s:String[]">[arr_text]</OutArgument>
               </ui:AssignOperation.To>
@@ -338,7 +365,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
                 <InArgument x:TypeArguments="s:String[]">[System.Text.RegularExpressions.Regex.Replace(str_text, "[^a-zA-Z0-9가-힣ㄱ-ㅎㅏ-ㅣ/\-\s]", "").Split(New String() {vbLf}, StringSplitOptions.RemoveEmptyEntries).Select(Function(x) x.Trim()).ToArray()]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="s:String[]">[arr_text]</OutArgument>
               </ui:AssignOperation.To>
@@ -346,7 +373,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
                 <InArgument x:TypeArguments="s:String[]">[arr_text.Where(Function(x) Not String.IsNullOrWhiteSpace(x)).ToArray()]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:Int32">[int_cnt]</OutArgument>
               </ui:AssignOperation.To>
@@ -362,7 +389,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While - arr_text에서 dt_info 빈칸 채우기" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+      <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While - arr_text에서 dt_info 빈칸 채우기" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
         <ui:InterruptibleWhile.Body>
           <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="617.6,1592" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <Sequence.Variables>
@@ -614,7 +641,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InterruptibleWhile>
-      <Sequence DisplayName="피해대가해 산출" sap:VirtualizedContainerService.HintSize="512,795.2" sap2010:WorkflowViewState.IdRef="Sequence_31">
+      <Sequence DisplayName="피해대가해 산출" sap:VirtualizedContainerService.HintSize="478.4,48" sap2010:WorkflowViewState.IdRef="Sequence_31">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Int32" Name="int_피해" />
           <Variable x:TypeArguments="x:Int32" Name="int_가해" />
@@ -622,7 +649,8 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
@@ -655,11 +683,11 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
             </scg:List>
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
-        <If sap2010:Annotation.AnnotationText="쌍방 아닌 경우 정상 산출&#xA;쌍방인 경우 피해가해피가해 모두 표기" Condition="[int_피가해 &gt; 0]" DisplayName="If - 쌍방여부에 따른 피해대가해" sap:VirtualizedContainerService.HintSize="478.4,101.6" sap2010:WorkflowViewState.IdRef="If_7">
+        <If sap2010:Annotation.AnnotationText="쌍방 아닌 경우 정상 산출&#xA;쌍방인 경우 피해가해피가해 모두 표기" Condition="[int_피가해 &gt; 0]" DisplayName="If - 쌍방여부에 따른 피해대가해" sap:VirtualizedContainerService.HintSize="478.4,983.2" sap2010:WorkflowViewState.IdRef="If_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -723,9 +751,15 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
               </Sequence>
             </ActivityAction>
           </ui:ForEachRow.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
       </Sequence>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;사안조사 보고서 추출 종료&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;사안조사 보고서 추출 종료&quot;]" />
   </Sequence>
 </Activity>

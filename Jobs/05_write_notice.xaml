@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="_05_write_notice" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_str_가해추정일람표" Type="InArgument(x:String)" />
     <x:Property Name="io_dt_info" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -124,7 +125,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_05_write_notice" sap:VirtualizedContainerService.HintSize="846,3068.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_05_write_notice" sap:VirtualizedContainerService.HintSize="719.6,3735.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_가해학생" />
       <Variable x:TypeArguments="x:String" Name="str_output_path_1" />
@@ -146,7 +147,6 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dt_가해" />
       <Variable x:TypeArguments="x:String" Name="str_학교명" />
       <Variable x:TypeArguments="x:String" Name="str_안건" />
-      <Variable x:TypeArguments="x:String" Name="str_가해추정일람표" />
       <Variable x:TypeArguments="s:DateTime" Name="datetime_시작시간" />
       <Variable x:TypeArguments="x:String" Name="str_피해추정" />
       <Variable x:TypeArguments="x:String" Name="str_가해추정" />
@@ -158,7 +158,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_output_path_1 : 학부모용&#xA;str_output_path_1 : 심의위원용" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="512,319.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_output_path_1 : 학부모용&#xA;str_output_path_1 : 심의위원용" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="512.8,319.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -211,7 +211,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="[대기실]&#xA;True : 대기실1&#xA;False : 대기실2" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="512,552.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="[대기실]&#xA;True : 대기실1&#xA;False : 대기실2" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="512.8,552.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -329,7 +329,7 @@ Distinct())]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <Sequence DisplayName="안건 문자열 생성 (학교별로 생성)" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="안건 문자열 생성 (학교별로 생성)" sap:VirtualizedContainerService.HintSize="512.8,56.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:List(x:String)" Name="li_안건" />
       </Sequence.Variables>
@@ -339,7 +339,7 @@ Distinct())]</InArgument>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,149.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
@@ -353,7 +353,7 @@ Distinct())]</InArgument>
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <Assign sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_6">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_안건]</OutArgument>
         </Assign.To>
@@ -361,16 +361,16 @@ Distinct())]</InArgument>
           <InArgument x:TypeArguments="x:String">[String.Join(", ", li_안건)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[str_안건]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[str_안건]" />
     </Sequence>
-    <Sequence DisplayName="피해/가해추정 문자열 생성" sap:VirtualizedContainerService.HintSize="512,439.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="피해/가해추정 문자열 생성" sap:VirtualizedContainerService.HintSize="512.8,56.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="486.4,56.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_37">
@@ -411,34 +411,40 @@ Distinct())]</InArgument>
             </ui:AssignOperation>
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
-      </ui:MultipleAssign>
-      <If Condition="[dt_피해.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="If_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+      <If Condition="[dt_피해.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="486.4,996.8" sap2010:WorkflowViewState.IdRef="If_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,283" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484.8,632.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_피해]" DisplayName="For Each Row in Data Table - 피해추정 문자열 생성" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_피해]" DisplayName="For Each Row in Data Table - 피해추정 문자열 생성" sap:VirtualizedContainerService.HintSize="451.2,407.2" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_11">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[str_피해추정]</OutArgument>
                       </Assign.To>
@@ -451,22 +457,22 @@ Distinct())]</InArgument>
               </ui:ForEachRow.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;피해추정: &quot; + str_피해추정]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="451.2,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;피해추정: &quot; + str_피해추정]" />
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484.8,225.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_18">
+            <Assign sap:VirtualizedContainerService.HintSize="451.2,165.6" sap2010:WorkflowViewState.IdRef="Assign_18">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_피해추정]</OutArgument>
               </Assign.To>
@@ -477,7 +483,7 @@ Distinct())]</InArgument>
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[dt_가해.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="478.4,48" sap2010:WorkflowViewState.IdRef="If_4">
+      <If Condition="[dt_가해.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="486.4,48" sap2010:WorkflowViewState.IdRef="If_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -543,13 +549,13 @@ Distinct())]</InArgument>
         </If.Else>
       </If>
     </Sequence>
-    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope - hwp 텍스트 대치(학부모)" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="PythonScope_1" LibraryPath="C:\Users\dhkim\AppData\Local\Programs\Python\Python312\python312.dll" Path="C:\Users\dhkim\AppData\Local\Programs\Python\Python312" Version="Python &gt;=3.10">
+    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope - hwp 텍스트 대치(학부모)" sap:VirtualizedContainerService.HintSize="512.8,1107.2" sap2010:WorkflowViewState.IdRef="PythonScope_1" LibraryPath="C:\Users\dhkim\AppData\Local\Programs\Python\Python312\python312.dll" Path="C:\Users\dhkim\AppData\Local\Programs\Python\Python312" Version="Python &gt;=3.10">
       <p:PythonScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="548,3162" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="511.2,873.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="p:PythonObject" Name="pyObj" />
               <Variable x:TypeArguments="p:PythonObject" Name="pyRes" />
@@ -565,70 +571,42 @@ Distinct())]</InArgument>
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;학부모 템플릿 텍스트 대치 시작&quot;)]" />
-            <Assign sap:VirtualizedContainerService.HintSize="514,175" sap2010:WorkflowViewState.IdRef="Assign_12">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Boolean">[대기실]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_피해]" DisplayName="For Each Row in Data Table - 피해" sap:VirtualizedContainerService.HintSize="514,1293" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="477.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;학부모 템플릿 텍스트 대치 시작&quot;)]" />
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="477.6,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[대기실]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_44">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[str_대기실]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">1</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_피해]" DisplayName="For Each Row in Data Table - 피해" sap:VirtualizedContainerService.HintSize="477.6,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="512,1111" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="449.6,871.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[대기실]" DisplayName="If - 대기실 설정" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="If_1">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_7">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[str_대기실]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">["1"]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_8">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[str_대기실]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">["2"]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <Assign DisplayName="Assign ★ 참석요청서 대체 데이터 (피해)" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign DisplayName="Assign ★ 참석요청서 대체 데이터 (피해)" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_4">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
                       </Assign.To>
@@ -646,7 +624,7 @@ Distinct())]</InArgument>
 		{"{{피해추정}}", str_피해추정},
 		{"{{가해추정}}", str_가해추정},
 		{"{{가해학생}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
-		{"{{가해추정일람표}}", str_가해추정일람표},
+		{"{{가해추정일람표}}", in_str_가해추정일람표},
 		{"{{날짜}}", Today.ToString("yyyy년 M월 d일")},
 		{"{{년도}}", Today.ToString("yyyy")},
 		{"{{제출일시}}", datetime_일시.AddDays(-5).ToString("M월 d일")}
@@ -660,7 +638,7 @@ Distinct())]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="478,227" sap2010:WorkflowViewState.IdRef="LoadScript_1" Result="[pyObj]" ScriptFile="[str_script]">
+                    <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="416,226.4" sap2010:WorkflowViewState.IdRef="LoadScript_1" Result="[pyObj]" ScriptFile="[str_script]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -668,7 +646,7 @@ Distinct())]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </p:LoadScript>
-                    <p:InvokeMethod DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="478,123" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" Instance="[pyObj]" Name="replace_hwpx" Parameters="[new Object() {str_temp_1, Path.Combine(in_Config(&quot;output_folder&quot;).ToString+&quot;\&quot;+in_TransactionItem.SpecificContent(&quot;DIR_NAME&quot;).ToString, Path.GetFileNameWithoutExtension(str_output_path_1)+&quot;_&quot;+CurrentRow(&quot;학생 성명&quot;).ToString+Path.GetExtension(str_output_path_1)), json_input}]" Result="[pyRes]">
+                    <p:InvokeMethod DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" Instance="[pyObj]" Name="replace_hwpx" Parameters="[new Object() {str_temp_1, Path.Combine(in_Config(&quot;output_folder&quot;).ToString+&quot;\&quot;+in_TransactionItem.SpecificContent(&quot;DIR_NAME&quot;).ToString, Path.GetFileNameWithoutExtension(str_output_path_1)+&quot;_&quot;+CurrentRow(&quot;학생 성명&quot;).ToString+Path.GetExtension(str_output_path_1)), json_input}]" Result="[pyRes]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -676,53 +654,53 @@ Distinct())]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </p:InvokeMethod>
-                    <p:GetObject x:TypeArguments="x:String" DisplayName="Get Python Object" sap:VirtualizedContainerService.HintSize="478,123" sap2010:WorkflowViewState.IdRef="GetObject`1_1" PythonObject="[pyRes]" Result="[str_result]" />
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[str_result]" />
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
-                      <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="s:DateTime">[datetime_시작시간]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="s:DateTime">[datetime_시작시간.AddMinutes(Convert.ToInt32(in_Config("시간간격").ToString))]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[대기실]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:Boolean">[Not 대기실]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                        </scg:List>
-                      </ui:MultipleAssign.AssignOperations>
-                    </ui:MultipleAssign>
+                    <p:GetObject x:TypeArguments="x:String" DisplayName="Get Python Object" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="GetObject`1_1" PythonObject="[pyRes]" Result="[str_result]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[str_result]" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_가해]" DisplayName="For Each Row in Data Table - 가해" sap:VirtualizedContainerService.HintSize="514,1293" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="477.6,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_45">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[대기실]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_46">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[str_대기실]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">1</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_가해]" DisplayName="For Each Row in Data Table - 가해" sap:VirtualizedContainerService.HintSize="477.6,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="512,1111" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="512,1108" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[대기실]" DisplayName="If - 대기실 설정" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[대기실]" DisplayName="If - 대기실 설정" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="If_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -730,13 +708,13 @@ Distinct())]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_13">
+                          <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_19">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[str_대기실]</OutArgument>
                             </Assign.To>
@@ -747,13 +725,13 @@ Distinct())]</InArgument>
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_14">
+                          <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_20">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[str_대기실]</OutArgument>
                             </Assign.To>
@@ -764,7 +742,7 @@ Distinct())]</InArgument>
                         </Sequence>
                       </If.Else>
                     </If>
-                    <Assign DisplayName="Assign ★ 참석요청서 대체 데이터 (가해)" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign DisplayName="Assign ★ 참석요청서 대체 데이터 (가해)" sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_5">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[json_input]</OutArgument>
                       </Assign.To>
@@ -780,9 +758,9 @@ Distinct())]</InArgument>
 		{"{{접수번호}}", str_접수번호},
         {"{{학교명}}", str_학교명},
 		{"{{피해추정}}", str_피해추정},
-		{"{{가해추정}}", str_가해추정},
+		{"{{가해추정}}", CurrentRow("학년반").ToString + " " + CurrentRow("학생 성명").ToString},
 		{"{{가해학생}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
-		{"{{가해추정일람표}}", str_가해추정일람표},
+		{"{{가해추정일람표}}", in_str_가해추정일람표},
 		{"{{날짜}}", Today.ToString("yyyy년 M월 d일")},
 		{"{{년도}}", Today.ToString("yyyy")},
 		{"{{제출일시}}", datetime_일시.AddDays(-5).ToString("M월 d일")}
@@ -796,7 +774,7 @@ Distinct())]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="478,227" sap2010:WorkflowViewState.IdRef="LoadScript_4" Result="[pyObj]" ScriptFile="[str_script]">
+                    <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="478.4,226.4" sap2010:WorkflowViewState.IdRef="LoadScript_4" Result="[pyObj]" ScriptFile="[str_script]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -804,7 +782,7 @@ Distinct())]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </p:LoadScript>
-                    <p:InvokeMethod DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="478,123" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" Instance="[pyObj]" Name="replace_hwpx" Parameters="[New Object() {str_temp_1, Path.Combine(in_Config(&quot;output_folder&quot;).ToString+&quot;\&quot;+in_TransactionItem.SpecificContent(&quot;DIR_NAME&quot;).ToString, Path.GetFileNameWithoutExtension(str_output_path_1)+&quot;_&quot;+CurrentRow(&quot;학생 성명&quot;).ToString+Path.GetExtension(str_output_path_1)), json_input}]" Result="[pyRes]">
+                    <p:InvokeMethod DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="478.4,122.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" Instance="[pyObj]" Name="replace_hwpx" Parameters="[New Object() {str_temp_1, Path.Combine(in_Config(&quot;output_folder&quot;).ToString+&quot;\&quot;+in_TransactionItem.SpecificContent(&quot;DIR_NAME&quot;).ToString, Path.GetFileNameWithoutExtension(str_output_path_1)+&quot;_&quot;+CurrentRow(&quot;학생 성명&quot;).ToString+Path.GetExtension(str_output_path_1)), json_input}]" Result="[pyRes]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -812,9 +790,9 @@ Distinct())]</InArgument>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </p:InvokeMethod>
-                    <p:GetObject x:TypeArguments="x:String" DisplayName="Get Python Object" sap:VirtualizedContainerService.HintSize="478,123" sap2010:WorkflowViewState.IdRef="GetObject`1_7" PythonObject="[pyRes]" Result="[str_result]" />
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[str_result]" />
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                    <p:GetObject x:TypeArguments="x:String" DisplayName="Get Python Object" sap:VirtualizedContainerService.HintSize="478.4,122.4" sap2010:WorkflowViewState.IdRef="GetObject`1_7" PythonObject="[pyRes]" Result="[str_result]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[str_result]" />
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
@@ -841,29 +819,29 @@ Distinct())]</InArgument>
               </ui:ForEachRow.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(&quot;학부모 템플릿 텍스트 대치 종료&quot;)]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="477.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(&quot;학부모 템플릿 텍스트 대치 종료&quot;)]" />
           </Sequence>
         </ActivityAction>
       </p:PythonScope.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </p:PythonScope>
-    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope - hwp 텍스트 대치(심의위원)" sap:VirtualizedContainerService.HintSize="512,1620.8" sap2010:WorkflowViewState.IdRef="PythonScope_3" LibraryPath="C:\Users\dhkim\AppData\Local\Programs\Python\Python312\python312.dll" Path="C:\Users\dhkim\AppData\Local\Programs\Python\Python312" Version="Python &gt;=3.10">
+    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope - hwp 텍스트 대치(심의위원)" sap:VirtualizedContainerService.HintSize="512.8,1619.2" sap2010:WorkflowViewState.IdRef="PythonScope_3" LibraryPath="C:\Users\dhkim\AppData\Local\Programs\Python\Python312\python312.dll" Path="C:\Users\dhkim\AppData\Local\Programs\Python\Python312" Version="Python &gt;=3.10">
       <p:PythonScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="449.6,1396" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="449.6,1394.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="p:PythonObject" Name="pyObj" />
               <Variable x:TypeArguments="p:PythonObject" Name="pyRes" />
@@ -894,13 +872,13 @@ Distinct())]</InArgument>
 		{"{{피해추정}}", str_피해추정},
 		{"{{가해추정}}", str_가해추정},
 		{"{{가해학생}}", String.Join(", ", dt_가해.AsEnumerable.Select(Function(row) row("학생 성명").ToString).ToArray)},
-		{"{{가해추정일람표}}", str_가해추정일람표},
+		{"{{가해추정일람표}}", in_str_가해추정일람표},
 		{"{{날짜}}", Today.ToString("yyyy년 M월 d일")}
     }
 )]</InArgument>
               </Assign.Value>
             </Assign>
-            <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="LoadScript_3" Result="[pyObj]" ScriptFile="[str_script]">
+            <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="416,226.4" sap2010:WorkflowViewState.IdRef="LoadScript_3" Result="[pyObj]" ScriptFile="[str_script]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -908,7 +886,7 @@ Distinct())]</InArgument>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </p:LoadScript>
-            <p:InvokeMethod DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="InvokeMethod_5" Instance="[pyObj]" Name="replace_hwpx" Parameters="[new Object() {str_temp_2, str_output_path_2, json_input}]" Result="[pyRes]">
+            <p:InvokeMethod DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_5" Instance="[pyObj]" Name="replace_hwpx" Parameters="[new Object() {str_temp_2, str_output_path_2, json_input}]" Result="[pyRes]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
