@@ -129,7 +129,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="_02_read_report" sap:VirtualizedContainerService.HintSize="759.6,4925.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_read_report" sap:VirtualizedContainerService.HintSize="812.4000000000001,4924.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_script" />
       <Variable x:TypeArguments="x:String" Name="str_extract" />
@@ -228,7 +228,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </p:PythonScope>
-    <Sequence DisplayName="데이터 가공 - str_extract" sap:VirtualizedContainerService.HintSize="656,4262.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="데이터 가공 - str_extract" sap:VirtualizedContainerService.HintSize="656,4261.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Name="arr_text" />
         <Variable x:TypeArguments="x:Int32" Name="idx" />
@@ -295,7 +295,7 @@ System.Globalization.DateTimeStyles.AllowWhiteSpaces
         </ui:MultipleAssign>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;접수일자: &quot; + datetime_접수일자.ToString(&quot;yyyy-MM-dd&#x9;&quot;)]" />
       </Sequence>
-      <Assign sap:VirtualizedContainerService.HintSize="622,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap:VirtualizedContainerService.HintSize="622.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_category]</OutArgument>
         </Assign.To>
